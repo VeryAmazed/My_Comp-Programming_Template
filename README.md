@@ -1,2 +1,3 @@
 # My_Comp-Programming_Template
 My competitive programming template.
+A majority of the algorithm implementations in there aren't mine. They are either from Competitive Programmer's Handbook by Antti Laaksonen or from USACO.guide (Like Benq's DSU). The segment tree implementation is based on the lazy-propogation template from a friend of mine, but I modified it to be more general purpose (i.e. supports range updates, range sets, updating and querying can use different functions, i.e. you can use it as an add update, min query segment tree). The segment tree can also be used as a point update segment tree, by setting the range as (i, i), but it will run twice as slow as a dedicated point update segment tree. I typically just copy paste in whatever I need.  
