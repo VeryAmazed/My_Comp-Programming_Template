@@ -56,6 +56,7 @@ struct custom_hash {
 #define max3(a, b, c) max(a, max(b, c))
 #define min3(a, b, c) min(a, min(b, c))
 #define pb push_back 
+#define pf push_front
 #define f first
 #define s second
 #define mp make_pair
@@ -63,6 +64,9 @@ struct custom_hash {
 #define pii pair<int, int>
 #define tp make_tuple
 
+// first four are north, west, east ,south
+int dir1[] = {1, 0, -1, 0, 1, 1, -1, -1};
+int dir2[] = {0, 1, 0, -1, 1, -1, 1, -1};
 
 int main() {
 	// apparently this does fast i/o
@@ -113,9 +117,46 @@ struct DSU{
 	
 };
 
+// a and b must be positive because mod in c++ does not follow the mathematical definition
 ll gcd(ll a, ll b) {
 	if (b == 0) return a;
 	return gcd(b, a % b);
+}
+
+// extended euclidean algorithm
+// a and b must be positive because mod in c++ does not follow the mathematical definition
+// solves ax + by = gcd(a,b)
+ll gcd_ext(ll a, ll b, ll& x, ll& y) {
+    if (b == 0) {
+        x = 1;
+        y = 0;
+        return a;
+    }
+    ll x1, y1;
+    ll d = gcd_ext(b, a % b, x1, y1);
+    x = y1;
+    y = x1 - y1 * (a / b);
+    return d;
+}
+
+// finds a solution to a linear diophantine equation
+// uses the above function
+// a and b can be negative 
+// solves ax0 + by0 = c and g = gcd(a, b)
+// the solutions returned x0 and y0 are just one solution to the equation, 
+// the general solutions, x and y can be expressed as x = x0 + k(b/g) and y = y0 - k(a/g), we see that plugging these 2 expressions back into the euqation doesn't break the inequality
+// for more info, refer to the cp-algos website
+bool find_any_solution(ll a, ll b, ll c, ll &x0, ll &y0, ll &g) {
+    g = gcd_ext(abs(a), abs(b), x0, y0);
+    if (c % g) {
+        return false;
+    }
+
+    x0 *= c / g;
+    y0 *= c / g;
+    if (a < 0) x0 = -x0;
+    if (b < 0) y0 = -y0;
+    return true;
 }
 
 // for mod exponentiation simply pass in a third parameter, m (mod), and then mod after every time you multiply
@@ -129,7 +170,7 @@ ll binpow(ll a, ll b) {
     }
     return res;
 }
-// find mod inverse of a number. Uses fermat's little theorem so only works when mod is prime
+// find mod inverse of a number. Uses eulaer's and fermat's little theorem so only works when mod is prime, if m is prime x^(-1) = x^(m-2)
 ll mod_inv(ll a, ll mod){
 	if(gcd(a, mod) == 1){
 		return binpow(a , mod-2);
