@@ -181,13 +181,26 @@ ll mod_inv(ll a, ll mod){
 }
 
 // Sieve of Eratosthenes
-// prime numbers are set to 0 in sieve[], composite numbers are set to some multiple of a prime
-ll sieve[n+1] = {0};
-for (int x = 2; x <= n; x++) {
-	if (sieve[x]) continue;
-	for (int u = 2*x; u <= n; u += x) {
-		sieve[u] = x;
+// Primes are in the primes vector
+// Also allows for the getting of all prime factors and their powers of some given number a[i] < mxn
+// Basically we set primes to themselves and every composite number we store the smallest prime in it's prime factorization
+// then to get the prime factors just use the while loop below
+// Basically inductively, for every number that is composed purely of primes less than the current prime, we have a correct prime factorization
+// Then for the current prime, the division either takes you to another number that is marked with the current prime, or to a number for which following the path will produce a correct prime factorization
+ll sieve[mxn+1] = {0};
+vector<ll> primes;
+for (ll i = 2; i < mxn; i++) {
+	if (sieve[i] != 0) continue;
+	sieve[i] = i;
+	primes.pb(i);
+	for (ll j = 2*i; j < mxn; j+=i) {
+		if (sieve[j] != 0) continue;
+		sieve[j] = i;
 	}
+}
+
+while (a[i] > 1) {
+	a[i] /= sieve[a[i]];
 }
 
 // Z-algorithm, generates an array z, where z[i] is the length of a substring substr, where substr is a prefix of the string str, and it starts at index i in str
