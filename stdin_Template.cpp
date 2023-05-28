@@ -189,11 +189,11 @@ ll mod_inv(ll a, ll mod){
 // Then for the current prime, the division either takes you to another number that is marked with the current prime, or to a number for which following the path will produce a correct prime factorization
 ll sieve[mxn+1] = {0};
 vector<ll> primes;
-for (ll i = 2; i < mxn; i++) {
+for (ll i = 2; i <= mxn; i++) {
 	if (sieve[i] != 0) continue;
 	sieve[i] = i;
 	primes.pb(i);
-	for (ll j = 2*i; j < mxn; j+=i) {
+	for (ll j = 2*i; j <= mxn; j+=i) {
 		if (sieve[j] != 0) continue;
 		sieve[j] = i;
 	}
