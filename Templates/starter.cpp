@@ -75,7 +75,7 @@ int main() {
 	// use this if you read in from a file
 	/*
 	freopen("in.txt", "r", stdin);
-    freopen("out.txt", "w", stdout);
+    	freopen("out.txt", "w", stdout);
 	*/
 	
 	stringstream ss;
@@ -84,7 +84,10 @@ int main() {
 	
 	//cout << fixed << setprecision(12);
 	// if you use ld, use the above and don't use string stream
-
+	
+	// use instead of ceil(a, b)
+	// (a + b - 1) / b
+	
 	cout << ss.str();
 	return 0;
 }
