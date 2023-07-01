@@ -18,20 +18,27 @@ vector<int> z(string& s) {
 // All the precalculation for 2 base stringhash
 // to get the hash of a string: 
 // 		((poly1[end+1]-poly1[start]*pow1[end-start+1])%M1 + M1)%M1; 
-ll M1 = 1e+7;
-ll M2 = 1e+9;
+ll M1 = 1e9+7;
+ll M2 = 1e9+9;
+ll M3 = 1000000021;
 const ll P1 = (uint64_t)chrono::duration_cast<chrono::nanoseconds>(chrono::high_resolution_clock::now().time_since_epoch()).count() % (uint64_t)M1;
 const ll P2 = (uint64_t)chrono::duration_cast<chrono::nanoseconds>(chrono::high_resolution_clock::now().time_since_epoch()).count() % (uint64_t)M2;
+const ll P3 = (uint64_t)chrono::duration_cast<chrono::nanoseconds>(chrono::high_resolution_clock::now().time_since_epoch()).count() % (uint64_t)M3;
 
 vector<ll> pow1(str.size()+1, 0);
 vector<ll> pow2(str.size()+1, 0);
+vector<ll> pow3(str.size()+1, 0);
 vector<ll> poly1(str.size()+1, 0);
 vector<ll> poly2(str.size()+1, 0);
+vector<ll> poly3(str.size()+1, 0);
 pow1[0] =1;
 pow2[0] =1;
+pow3[0] =1;
 for(int i =0; i < n; i++){
 	pow1[i+1] = (pow1[i]*P1)%M1;
 	pow2[i+1] = (pow2[i]*P2)%M2;
+	pow3[i+1] = (pow3[i]*P3)%M3;
 	poly1[i+1] = ((poly1[i]*P1)%M1 + str[i])%M1;
 	poly2[i+1] = ((poly2[i]*P2)%M2 + str[i])%M2;
+	poly3[i+1] = ((poly3[i]*P3)%M3 + str[i])%M3;
 }
