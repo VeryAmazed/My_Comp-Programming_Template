@@ -84,3 +84,15 @@ for (ll i = 2; i <= mxn; i++) {
 while (a[i] > 1) {
 	a[i] /= sieve[a[i]];
 }
+
+// From -is-this-fft-
+// Fast integer sqrt that works like a binary search, i.e. O(logn)
+ll int_sqrt (ll x) {
+  ll ans = 0;
+  for (ll k = (ll)1 << 31; k != 0; k /= 2) {
+    if ((ans + k) * (ans + k) <= x) {
+      ans += k;
+    }
+  }
+  return ans;
+}
