@@ -45,6 +45,13 @@ for (int i = 1; i <= n-1; i++) {
 }
 
 // Dense Djikstra's (from cp-algos)
+/*
+On every iteration from 1 to n, we find the node that has the smallest dist from start
+and attempt to reduce the distance of any node it has an edge with.
+Basically how the Djikstra's algorithm is visualized. You have a set of nodes which
+have the minimum distance and every iteration you add in a new node into this set and when
+you do you perform some relaxations
+*/
 vector<vector<pair<int, int>>> vec;
 vector<ll> dists;
 vector<int> paths;
