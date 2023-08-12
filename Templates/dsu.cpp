@@ -1,5 +1,11 @@
 // size of components are stored as negative values
 // any node with a negative value is the representative node
+/*
+	if the values corresponding to the nodes do not fit in 1 through n
+	just use an external unordered_map to map the actual values to spots
+	inside the vector. Also note that the mapping of the values does not
+	need to following the relative ordering of the values
+*/
 struct DSU{
 	vector<int> sets;
 	void init(int n){ sets = vector<int>(n+1 ,-1);}
