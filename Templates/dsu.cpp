@@ -3,8 +3,8 @@
 /*
 	if the values corresponding to the nodes do not fit in 1 through n
 	just use an external unordered_map to map the actual values to spots
-	inside the vector. Also note that the mapping of the values does not
-	need to following the relative ordering of the values
+	inside the vector. Also note that the mapping of the values to indices 
+	does not need to following the relative ordering of the values
 */
 struct DSU{
 	vector<int> sets;
