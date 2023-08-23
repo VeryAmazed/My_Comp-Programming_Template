@@ -75,19 +75,20 @@ int main() {
 	// use this if you read in from a file
 	/*
 	freopen("in.txt", "r", stdin);
-    	freopen("out.txt", "w", stdout);
+    freopen("out.txt", "w", stdout);
 	*/
 	
 	stringstream ss;
+	
 	// Do it once. Do it right.
+	// Read the problem statement carefully
 	// Plan out the steps in words on a piece of paper before implementing
 	
 	//cout << fixed << setprecision(12);
 	// if you use ld, use the above and don't use string stream
 	
-	// use instead of ceil(a, b)
+	// use instead of ceil(a, b) if a and b are positive
 	// (a + b - 1) / b
-	
 	cout << ss.str();
 	return 0;
 }
