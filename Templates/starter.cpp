@@ -1,28 +1,4 @@
-#include <vector>
-#include <set>
-#include <map>
-#include <queue>
-#include <list>
-#include <unordered_map>
-#include <unordered_set>
-#include <sstream>
-#include <fstream>
-#include <algorithm>
-#include <cctype>
-#include <cmath>
-#include <string>
-#include <iostream>
-#include <cstdlib>
-#include <iterator>
-#include <utility>
-#include <deque>
-#include <ctime>
-#include <chrono>
-#include <iomanip>
-#include <cstdio>
-#include <cstring>
-#include <stack>
-#include <functional>
+#include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
 // if you end up using long double, you need to set the floating point notation to fixed, and set the percision to be very high
