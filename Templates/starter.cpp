@@ -59,6 +59,7 @@ int main() {
 	// Do it once. Do it right.
 	// Read the problem statement carefully
 	// Plan out the steps in words on a piece of paper before implementing
+	// after RTE(obviously) but also WA, run valgrind!!!
 	
 	//cout << fixed << setprecision(12);
 	// if you use ld, use the above and don't use string stream
