@@ -42,7 +42,8 @@ bool find_any_solution(ll a, ll b, ll c, ll &x0, ll &y0, ll &g) {
     return true;
 }
 
-// for mod exponentiation simply pass in a third parameter, m (mod), and then mod after every time you multiply
+// for mod exponentiation simply pass in a third parameter, m (mod), 
+// and then mod after every time you multiply
 ll binpow(ll a, ll b) {
     ll res = 1;
     while (b > 0) {
