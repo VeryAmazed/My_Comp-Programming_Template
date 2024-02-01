@@ -1,9 +1,10 @@
-// Z-algorithm, generates an array z, where z[i] is the length of a substring substr, where substr is a prefix of the string str, 
-// and it starts at index i in str
-// can be used be used to find in number of occurences of a string a, as a substring of another string b, simply input a + '$' + b, 
-// as the parameter, '$' is any character that will not be in string A or B
-// doesn't need to take a string as input, because a string is just a vector of characters, which is just a vector is integers, 
-// you can also just input a vector of integers 
+// Z-algorithm, generates an array z, where z[i] is the length of a substring substr, 
+// where substr is a prefix of the string str, and it starts at index i in str
+// can be used be used to find in number of occurences of a string a, as a 
+// substring of another string b, simply input a + '$' + b, as the parameter, '$' is 
+// any character that will not be in string A or B
+// doesn't need to take a string as input, because a string is just a vector of characters,
+// which is just a vector is integers, you can also just input a vector of integers 
 vector<int> z(string& s) {
 	int n = s.size();
 	vector<int> z(n);
