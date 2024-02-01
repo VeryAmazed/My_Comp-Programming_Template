@@ -24,9 +24,12 @@ vector<int> z(string& s) {
 ll M1 = 1e9+7;
 ll M2 = 1e9+9;
 ll M3 = 1000000021;
-const ll P1 = (uint64_t)chrono::duration_cast<chrono::nanoseconds>(chrono::high_resolution_clock::now().time_since_epoch()).count() % (uint64_t)M1;
-const ll P2 = (uint64_t)chrono::duration_cast<chrono::nanoseconds>(chrono::high_resolution_clock::now().time_since_epoch()).count() % (uint64_t)M2;
-const ll P3 = (uint64_t)chrono::duration_cast<chrono::nanoseconds>(chrono::high_resolution_clock::now().time_since_epoch()).count() % (uint64_t)M3;
+const ll P1 = (uint64_t)chrono::duration_cast<chrono::nanoseconds>(chrono::high_resolution_clock::now()
+.time_since_epoch()).count() % (uint64_t)M1;
+const ll P2 = (uint64_t)chrono::duration_cast<chrono::nanoseconds>(chrono::high_resolution_clock::now()
+.time_since_epoch()).count() % (uint64_t)M2;
+const ll P3 = (uint64_t)chrono::duration_cast<chrono::nanoseconds>(chrono::high_resolution_clock::now()
+.time_since_epoch()).count() % (uint64_t)M3;
 
 vector<ll> pow1(str.size()+1, 0);
 vector<ll> pow2(str.size()+1, 0);
