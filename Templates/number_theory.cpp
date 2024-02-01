@@ -53,8 +53,8 @@ ll binpow(ll a, ll b) {
     }
     return res;
 }
-// find mod inverse of a number. Uses eulaer's and fermat's little theorem so only works when mod is prime, 
-// if m is prime x^(-1) = x^(m-2)
+// find mod inverse of a number. Uses eulaer's and fermat's little theorem so only works when 
+// mod is prime, if m is prime x^(-1) = x^(m-2)
 ll mod_inv(ll a, ll mod){
 	if(gcd(a, mod) == 1){
 		return binpow(a , mod-2);
@@ -71,8 +71,8 @@ ll mod_inv(ll a, ll mod){
 // prime factorization then to get the prime factors just use the while loop below
 // Basically inductively, for every number that is composed purely of primes less than the current prime, 
 // we have a correct prime factorization
-// Then for the current prime, the division either takes you to another number that is marked with the current prime, 
-// or to a number for which following the path will produce a correct prime factorization
+// Then for the current prime, the division either takes you to another number that is marked with the 
+// current prime, or to a number for which following the path will produce a correct prime factorization
 ll sieve[mxn+1] = {0};
 vector<ll> primes;
 for (ll i = 2; i <= mxn; i++) {
