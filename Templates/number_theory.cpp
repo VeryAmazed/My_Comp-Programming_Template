@@ -53,7 +53,8 @@ ll binpow(ll a, ll b) {
     }
     return res;
 }
-// find mod inverse of a number. Uses eulaer's and fermat's little theorem so only works when mod is prime, if m is prime x^(-1) = x^(m-2)
+// find mod inverse of a number. Uses eulaer's and fermat's little theorem so only works when mod is prime, 
+// if m is prime x^(-1) = x^(m-2)
 ll mod_inv(ll a, ll mod){
 	if(gcd(a, mod) == 1){
 		return binpow(a , mod-2);
@@ -66,9 +67,10 @@ ll mod_inv(ll a, ll mod){
 // Sieve of Eratosthenes
 // Primes are in the primes vector
 // Also allows for the getting of all prime factors and their powers of some given number a[i] < mxn
-// Basically we set primes to themselves and every composite number we store the smallest prime in it's prime factorization
-// then to get the prime factors just use the while loop below
-// Basically inductively, for every number that is composed purely of primes less than the current prime, we have a correct prime factorization
+// Basically we set primes to themselves and every composite number we store the smallest prime in it's 
+// prime factorization then to get the prime factors just use the while loop below
+// Basically inductively, for every number that is composed purely of primes less than the current prime, 
+// we have a correct prime factorization
 // Then for the current prime, the division either takes you to another number that is marked with the current prime, 
 // or to a number for which following the path will produce a correct prime factorization
 ll sieve[mxn+1] = {0};
