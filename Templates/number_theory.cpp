@@ -101,3 +101,25 @@ ll int_sqrt (ll x) {
   }
   return ans;
 }
+
+// From cp-algos
+// Number of integers less than or equal to m which are coprime with x
+// Time complexity is 2^(#prime factors) but cp-algos says it can be expressed as O(sqrt(x))
+ll coprime(ll x, ll m, vector<ll>& primes){
+	ll sum = 0;
+	for(int i = 1; i < (1 << (int)primes.size()); i++){
+		ll mult = 1, bits = 0;
+		for(int j = 0; j < (int)primes.size(); j++){
+			if(i & (1<<j)){
+				bits++;
+				mult *= primes[j];
+			}
+		}
+		if(bits % 2 == 1){
+			sum += m/mult;
+		}else{
+			sum -= m/mult;
+		}
+	}
+	return m-sum;
+}
