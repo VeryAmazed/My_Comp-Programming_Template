@@ -37,7 +37,7 @@ struct custom_hash {
 #define s second
 #define mp make_pair
 #define pll pair<ll, ll>
-#define pii pair<int, int>
+#define pint pair<int, int>
 #define tp make_tuple
 
 // first four are north, west, east ,south
