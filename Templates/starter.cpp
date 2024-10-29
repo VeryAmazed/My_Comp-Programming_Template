@@ -40,6 +40,9 @@ struct custom_hash {
 #define pint pair<int, int>
 #define tp make_tuple
 
+const bool testing = 0;
+mt19937 rng(63);
+
 // first four are north, west, east ,south
 int dir1[] = {1, 0, -1, 0, 1, 1, -1, -1};
 int dir2[] = {0, 1, 0, -1, 1, -1, 1, -1};
@@ -51,7 +54,7 @@ int main() {
 	// use this if you read in from a file
 	/*
 	freopen("in.txt", "r", stdin);
-    freopen("out.txt", "w", stdout);
+    	freopen("out.txt", "w", stdout);
 	*/
 	
 	stringstream ss;
