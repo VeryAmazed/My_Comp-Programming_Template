@@ -65,6 +65,7 @@ int main() {
 	// after RTE(obviously) but also WA, run valgrind!!!
 	// Testing your solution on samples before coding is a great way to see if you read the problem correctly!!!
 	// Also take notes about key elements in the problem statement while reading the problem!!!
+	// If you're stuck, try small cases (not just a trick for math problems)
 	
 	//cout << fixed << setprecision(12);
 	// if you use ld, use the above and don't use string stream
