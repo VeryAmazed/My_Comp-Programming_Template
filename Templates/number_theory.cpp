@@ -27,8 +27,8 @@ ll gcd_ext(ll a, ll b, ll& x, ll& y) {
 // solves ax0 + by0 = c and g = gcd(a, b)
 // the solutions returned x0 and y0 are just one solution to the equation, 
 // the general solutions, x and y can be expressed as x = x0 + k(b/g) and y = y0 - k(a/g), 
-// we see that plugging these 2 expressions back into the euqation doesn't break the inequality
-// for more info, refer to the cp-algos website
+// we see that plugging these 2 expressions back into the euqation doesn't break the 
+// inequality for more info, refer to the cp-algos website
 bool find_any_solution(ll a, ll b, ll c, ll &x0, ll &y0, ll &g) {
     g = gcd_ext(abs(a), abs(b), x0, y0);
     if (c % g) {
@@ -67,13 +67,14 @@ ll mod_inv(ll a, ll mod){
 
 // Sieve of Eratosthenes
 // Primes are in the primes vector
-// Also allows for the getting of all prime factors and their powers of some given number a[i] < mxn
-// Basically we set primes to themselves and every composite number we store the smallest prime in it's 
-// prime factorization then to get the prime factors just use the while loop below
-// Basically inductively, for every number that is composed purely of primes less than the current prime, 
-// we have a correct prime factorization
-// Then for the current prime, the division either takes you to another number that is marked with the 
-// current prime, or to a number for which following the path will produce a correct prime factorization
+// Also allows for the getting of all prime factors and their powers of some given number 
+// a[i] < mxn. Basically we set primes to themselves and every composite number we store 
+// the smallest prime in it's prime factorization then to get the prime factors just use 
+// the while loop below. Basically inductively, for every number that is composed purely 
+// of primes less than the current prime, we have a correct prime factorization.
+// Then for the current prime, the division either takes you to another number that is 
+// marked with the current prime, or to a number for which following the path will produce 
+// a correct prime .
 ll sieve[mxn+1] = {0};
 vector<ll> primes;
 for (ll i = 2; i <= mxn; i++) {
