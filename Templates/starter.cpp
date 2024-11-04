@@ -66,6 +66,8 @@ int main() {
 	// Testing your solution on samples before coding is a great way to see if you read the problem correctly!!!
 	// Also take notes about key elements in the problem statement while reading the problem!!!
 	// If you're stuck, try small cases (not just a trick for math problems)
+	// When debugging, especially when it's not your code, go through the code line by line, don't just scan
+	// over sections, and if it's not your code, take notes on what each line does.
 	
 	//cout << fixed << setprecision(12);
 	// if you use ld, use the above and don't use string stream
