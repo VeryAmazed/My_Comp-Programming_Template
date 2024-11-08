@@ -23,12 +23,10 @@ struct custom_hash {
 };
 
 
-#define INF 2001001001
-#define INF2 2e18
-#define MOD 1000000007
+const ll INF = 2001001001;
+const ll INF2 = 2e18;
+const ll MOD = 1000000007;
 
-#define f0r(a, b) for (long long a = 0; a < b; a++)
-#define f1r(a, b, c) for(long long a = b; a < c; a++)
 #define max3(a, b, c) max(a, max(b, c))
 #define min3(a, b, c) min(a, min(b, c))
 #define pb push_back 
@@ -54,7 +52,7 @@ int main() {
 	// use this if you read in from a file
 	/*
 	freopen("in.txt", "r", stdin);
-    	freopen("out.txt", "w", stdout);
+    freopen("out.txt", "w", stdout);
 	*/
 	
 	stringstream ss;
