@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-// if you end up using long double, you need to set the floating point notation to fixed, and set the percision to be very high
+// if you end up using long double, you need to set the floating point notation to fixed, 
+// and set the percision to be very high
 typedef long double ld;
 
 // contrsuct umaps like this, unordered_map<long long, int, custom_hash> safe_map;
@@ -16,7 +17,6 @@ struct custom_hash {
     }
 
     size_t operator()(uint64_t x) const {
-		
         static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();
         return splitmix64(x + FIXED_RANDOM);
     }
