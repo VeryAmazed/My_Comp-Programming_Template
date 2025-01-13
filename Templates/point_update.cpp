@@ -31,7 +31,9 @@ struct SegTree {
 		ind += len;
 		segtree[ind] = val;
 		for (; ind > 1; ind /= 2) {
-			segtree[ind >> 1] = query_comb(segtree[ind], segtree[ind ^ 1]);
+			int i1 = ind, i2 = ind^1;
+			if(i1 > i2) swap(i1, i2);
+			segtree[ind >> 1] = query_comb(segtree[i1], segtree[i2]);
 		}
 	}
 	
@@ -41,18 +43,20 @@ struct SegTree {
 		ind += len;
 		segtree[ind] = update_comb(segtree[ind], val);
 		for (; ind > 1; ind /= 2) {
-			segtree[ind >> 1] = query_comb(segtree[ind], segtree[ind ^ 1]);
+			int i1 = ind, i2 = ind^1;
+			if(i1 > i2) swap(i1, i2);
+			segtree[ind >> 1] = query_comb(segtree[i1], segtree[i2]);
 		}
 	}
 
 	/** queries the range [start, end) */
 	T query(int start, int end) {
 		// assert(0 <= start && start < len && 0 < end && end <= len);
-		T sum = DEFAULT;
+		T l_val = DEFAULT, r_val = DEFAULT;
 		for (start += len, end += len; start < end; start /= 2, end /= 2) {
-			if ((start & 1) != 0) { sum = query_comb(sum, segtree[start++]); }
-			if ((end & 1) != 0) { sum = query_comb(sum, segtree[--end]); }
+			if ((start & 1) != 0) { sum = query_comb(l_val, segtree[start++]); }
+			if ((end & 1) != 0) { sum = query_comb(segtree[--end], r_val); }
 		}
-		return sum;
+		return query_comb(l_val, r_val);
 	}
 };
