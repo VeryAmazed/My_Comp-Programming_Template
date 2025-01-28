@@ -54,8 +54,8 @@ struct SegTree {
 		// assert(0 <= start && start < len && 0 < end && end <= len);
 		T l_val = DEFAULT, r_val = DEFAULT;
 		for (start += len, end += len; start < end; start /= 2, end /= 2) {
-			if ((start & 1) != 0) { sum = query_comb(l_val, segtree[start++]); }
-			if ((end & 1) != 0) { sum = query_comb(segtree[--end], r_val); }
+			if ((start & 1) != 0) { l_val = query_comb(l_val, segtree[start++]); }
+			if ((end & 1) != 0) { r_val = query_comb(segtree[--end], r_val); }
 		}
 		return query_comb(l_val, r_val);
 	}
