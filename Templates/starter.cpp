@@ -1,22 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-// if you end up using long double, you need to set the floating point notation to fixed, 
-// and set the percision to be very high
+// if you end up using long double, you need to set the floating point notation to fixed, and set the percision to be very high
 typedef long double ld;
 
 // contrsuct umaps like this, unordered_map<long long, int, custom_hash> safe_map;
 // FIXED_RANDOM is static so it doesn not get redeclared between function calls
 struct custom_hash {
-	static uint64_t splitmix64(uint64_t x) {
-		// http://xorshift.di.unimi.it/splitmix64.c
-		x += 0x9e3779b97f4a7c15;
-		x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
-		x = (x ^ (x >> 27)) * 0x94d049bb133111eb;
-		return x ^ (x >> 31);
+    static uint64_t splitmix64(uint64_t x) {
+        // http://xorshift.di.unimi.it/splitmix64.c
+        x += 0x9e3779b97f4a7c15;
+        x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
+        x = (x ^ (x >> 27)) * 0x94d049bb133111eb;
+        return x ^ (x >> 31);
     }
 
     size_t operator()(uint64_t x) const {
+		
         static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();
         return splitmix64(x + FIXED_RANDOM);
     }
@@ -52,13 +52,13 @@ int main() {
 	// use this if you read in from a file
 	/*
 	freopen("in.txt", "r", stdin);
-  freopen("out.txt", "w", stdout);
+    freopen("out.txt", "w", stdout);
 	*/
 	
 	stringstream ss;
 	
 	// Do it once. Do it right.
-	// Read the problem statement carefully
+	// Read the problem statement carefully, if it's a physical copy, underline key points
 	// Plan out the steps in words on a piece of paper before implementing
 	// after RTE(obviously) but also WA, run valgrind!!!
 	// Testing your solution on samples before coding is a great way to see if you read the problem correctly!!!
