@@ -1,8 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 typedef long long ll;
 // if you end up using long double, you need to set the floating point notation to fixed, and set the percision to be very high
 typedef long double ld;
+typedef pair<int, int> pii;
+typedef pair<ll, ll> pll;
+typedef vi vector<int>
 
 // contrsuct umaps like this, unordered_map<long long, int, custom_hash> safe_map;
 // FIXED_RANDOM is static so it doesn not get redeclared between function calls
@@ -34,9 +38,8 @@ const ll MOD = 1000000007;
 #define f first
 #define s second
 #define mp make_pair
-#define pll pair<ll, ll>
-#define pint pair<int, int>
-#define tp make_tuple
+#define sz(x) (int)(x).size()
+#define all(x) begin(x), end(x)
 
 const bool testing = 0;
 mt19937 rng(63);
@@ -48,11 +51,11 @@ int dir2[] = {0, 1, 0, -1, 1, -1, 1, -1};
 int main() {
 	// apparently this does fast i/o
 	cin.tie(0) , ios::sync_with_stdio(0);
-	
+	cin.exceptions(cin.failbit);
 	// use this if you read in from a file
 	/*
 	freopen("in.txt", "r", stdin);
-    freopen("out.txt", "w", stdout);
+    	freopen("out.txt", "w", stdout);
 	*/
 	
 	stringstream ss;
