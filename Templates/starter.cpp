@@ -6,7 +6,7 @@ typedef long long ll;
 typedef long double ld;
 typedef pair<int, int> pii;
 typedef pair<ll, ll> pll;
-typedef vi vector<int>
+typedef vector<int> vi;
 
 // contrsuct umaps like this, unordered_map<long long, int, custom_hash> safe_map;
 // FIXED_RANDOM is static so it doesn not get redeclared between function calls
@@ -55,7 +55,7 @@ int main() {
 	// use this if you read in from a file
 	/*
 	freopen("in.txt", "r", stdin);
-    	freopen("out.txt", "w", stdout);
+    freopen("out.txt", "w", stdout);
 	*/
 	
 	stringstream ss;
