@@ -124,3 +124,32 @@ ll coprime(ll x, ll m, vector<ll>& primes){
 	}
 	return m-sum;
 }
+
+// Mobius Function impl using Linear Sieve
+// Linear Sieve works by thinking of representing each is_composite by the smallest
+// prime in their factorization. We multiply i by primes smaller than it up to and 
+// including the first prime that divides i. This ensures each composite we mark is 
+// effectively marked by its smallest prime representation
+// When p doesn't divide i, then if i is comprised of only unique primes, and p is 
+// a new addition, we need to flip the mobius value from 1 to -1 or vice versa, 
+// otherwise it's mobius value is 0 so what we do doesn't matter.
+const ll mxn = 1e7;
+vector <ll> prime;
+vector<bool> is_composite(mxn+1, 0);
+vector<int> mobius(mxn+1, 0);
+mobius[1] = 1;
+for (ll i = 2; i <= mxn; ++i) {
+	if (!is_composite[i]){
+		prime.push_back (i);
+		mobius[i] = -1;
+	} 
+	for (int j = 0; j < prime.size () && i * prime[j] <= mxn; ++j) {
+		is_composite[i * prime[j]] = true;
+		if (i % prime[j] == 0){
+			mobius[i*prime[j]] = 0;
+			break;
+		}else{
+			mobius[i*prime[j]] = -mobius[i];
+		}
+	}
+}
