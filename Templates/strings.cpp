@@ -49,3 +49,19 @@ for(int i =0; i < n; i++){
 	poly2[i+1] = ((poly2[i]*P2)%M2 + str[i])%M2;
 	poly3[i+1] = ((poly3[i]*P3)%M3 + str[i])%M3;
 }
+
+auto check_hash = [&](int s1, int s2, int l){
+	ll h1a = ((poly1[s1+l] - poly1[s1]*pow1[l])%M1 + M1)%M1;
+	ll h1b = ((poly1[s2+l] - poly1[s2]*pow1[l])%M1 + M1)%M1;
+	ll h2a = ((poly2[s1+l] - poly2[s1]*pow2[l])%M2 + M2)%M2;
+	ll h2b = ((poly2[s2+l] - poly2[s2]*pow2[l])%M2 + M2)%M2;
+	ll h3a = ((poly3[s1+l] - poly3[s1]*pow3[l])%M3 + M3)%M3;
+	ll h3b = ((poly3[s2+l] - poly3[s2]*pow3[l])%M3 + M3)%M3;
+	// cout << h1a << " " << h1b << "\n";
+	// cout << h2a << " " << h2b << "\n";
+	// cout << h3a << " " << h3b << "\n";
+	bool g1 = (((poly1[s1+l] - poly1[s1]*pow1[l])%M1 + M1)%M1) == (((poly1[s2+l] - poly1[s2]*pow1[l])%M1 + M1)%M1);
+	bool g2 = (((poly2[s1+l] - poly2[s1]*pow2[l])%M2 + M2)%M2) == (((poly2[s2+l] - poly2[s2]*pow2[l])%M2 + M2)%M2);
+	bool g3 = (((poly3[s1+l] - poly3[s1]*pow3[l])%M3 + M3)%M3) == (((poly3[s2+l] - poly3[s2]*pow3[l])%M3 + M3)%M3);
+	return g1 && g2 && g3; 
+};
